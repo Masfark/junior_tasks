@@ -8,10 +8,15 @@ ThemeData myTheme() => ThemeData(
       primaryColor: kPrimaryColor,
       accentColor: kSecondaryColor,
 
+      // * Text theme
       textTheme: TextTheme(
+        headline1: GoogleFonts.lobster(fontSize: 18.0, color: kPrimaryColor),
         headline6: GoogleFonts.lobster(fontSize: 48.0, color: kPrimaryColor),
         headline4: GoogleFonts.lobster(fontSize: 24.0, color: kWhite),
       ),
+
+      // * Icons theme
+      primaryIconTheme: IconThemeData(color: kWhite),
 
       // * Elevated button style
       elevatedButtonTheme: ElevatedButtonThemeData(
