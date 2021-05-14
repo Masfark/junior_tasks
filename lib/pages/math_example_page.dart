@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:junior_tasks/utils/constants.dart';
 import 'package:junior_tasks/utils/math_example.dart';
+import 'package:junior_tasks/widgets/alert_dialog.dart';
 import 'package:junior_tasks/widgets/score_life.dart';
 import 'package:junior_tasks/widgets/text_headline.dart';
 import 'package:junior_tasks/widgets/text_main.dart';
@@ -65,12 +66,25 @@ class _MathExamplePageState extends State<MathExamplePage> {
       check = false;
     } else if (i == 2) {
       color = kPrimaryColor;
-      _generateExample();
-      life -= 1;
       check = false;
+      if (life <= 0) {
+        showDialog(
+            context: context,
+            builder: (_) => EndGameDialog(score, _restart),
+            barrierDismissible: false);
+      } else {
+        _generateExample();
+        life -= 1;
+      }
     } else {
       i = 0;
     }
+  }
+
+  void _restart() {
+    score = 0;
+    life = 3;
+    _generateExample();
   }
 
   @override
@@ -80,7 +94,7 @@ class _MathExamplePageState extends State<MathExamplePage> {
         title: HeadlineText('Math Page'),
       ),
       body: SafeArea(
-          child: Expanded(
+          child: SizedBox(
         child: Column(
           children: <Widget>[
             ScoreLife(score, life),
