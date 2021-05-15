@@ -16,7 +16,7 @@ class _MathExamplePageState extends State<MathExamplePage> {
   int value1, value2, trueAnswer, score = 0, life = 3;
   String answer = '';
   bool check = false;
-  var color = kPrimaryColor, _controller = TextEditingController();
+  var color, _controller = TextEditingController();
 
   @override
   void initState() {
@@ -60,12 +60,12 @@ class _MathExamplePageState extends State<MathExamplePage> {
     });
     await Future.delayed(Duration(milliseconds: 800));
     if (i == 1) {
-      color = kPrimaryColor;
+      color = Theme.of(context).textTheme.headline6.color;
       _generateExample();
       score += 10;
       check = false;
     } else if (i == 2) {
-      color = kPrimaryColor;
+      color = Theme.of(context).textTheme.headline6.color;
       check = false;
       if (life <= 0) {
         showDialog(

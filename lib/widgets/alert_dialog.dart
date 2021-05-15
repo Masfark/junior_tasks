@@ -14,7 +14,10 @@ class EndGameDialog extends StatelessWidget {
     return AlertDialog(
       elevation: 10.0,
       title: MainText('Игра окончена'),
-      content: Text('Вы завершили игру со счетом: $score'),
+      content: Text.rich(
+          TextSpan(text: 'Вы завершили игру со счётом: ', children: <TextSpan>[
+        TextSpan(text: '$score', style: TextStyle(fontWeight: FontWeight.bold))
+      ])),
       actions: [
         MaterialButton(
           onPressed: () {
