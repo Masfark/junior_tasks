@@ -2,17 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:junior_tasks/utils/constants.dart';
 import 'package:junior_tasks/utils/math_example.dart';
 import 'package:junior_tasks/widgets/alert_dialog.dart';
-import 'package:junior_tasks/widgets/answer_field.dart';
+import 'package:junior_tasks/widgets/example_card.dart';
 import 'package:junior_tasks/widgets/score_life.dart';
-import 'package:junior_tasks/widgets/text_headline.dart';
-import 'package:junior_tasks/widgets/text_main.dart';
 
-class MathExamplePage extends StatefulWidget {
+class PlusMathPage extends StatefulWidget {
   @override
-  _MathExamplePageState createState() => _MathExamplePageState();
+  _PlusMathPageState createState() => _PlusMathPageState();
 }
 
-class _MathExamplePageState extends State<MathExamplePage> {
+class _PlusMathPageState extends State<PlusMathPage> {
   int value1, value2, trueAnswer, score = 0, life = 3, range = 10, tmp = 0;
   String answer = '';
   bool check = false;
@@ -95,66 +93,23 @@ class _MathExamplePageState extends State<MathExamplePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: HeadlineText('Math Page'),
-      ),
-      body: SafeArea(
-          child: SizedBox(
+    return SafeArea(
+      child: SizedBox(
         child: Column(
           children: <Widget>[
             ScoreLife(score, life),
-            Column(
-              children: <Widget>[
-                Card(
-                  shadowColor: kSecondaryColor,
-                  shape: RoundedRectangleBorder(
-                    side: BorderSide(color: kPrimaryColor, width: 2.0),
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                  ),
-                  elevation: 15,
-                  child: Container(
-                    alignment: Alignment.center,
-                    width: 250,
-                    height: 100,
-                    child: Text(
-                      '$value1 + $value2 = $answer',
-                      style: Theme.of(context).textTheme.headline6.copyWith(
-                            color: color,
-                          ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 25,
-                ),
-                AnswerField(
-                  controller: _controller,
-                  func: _answerCheck,
-                ),
-                SizedBox(
-                  height: 25.0,
-                ),
-                SizedBox(
-                  width: 175.0,
-                  height: 40.0,
-                  child: ElevatedButton.icon(
-                    onPressed: () {
-                      _answerCheck(_controller.text);
-                    },
-                    label: MainText(
-                      'Ответить',
-                      textSize: 18.0,
-                      color: kWhite,
-                    ),
-                    icon: Icon(Icons.calculate),
-                  ),
-                ),
-              ],
+            ExampleCard(
+              value1: value1,
+              value2: value2,
+              answer: answer,
+              color: color,
+              controller: _controller,
+              answerCheck: _answerCheck,
+              symbol: '+',
             )
           ],
         ),
-      )),
+      ),
     );
   }
 }

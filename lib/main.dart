@@ -1,7 +1,7 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:junior_tasks/assets/theme/theme.dart';
-import 'package:junior_tasks/pages/math_example_page.dart';
+import 'package:junior_tasks/pages/Math/main_math_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         darkTheme: dark,
         title: 'Flutter Demo',
         theme: myThemeLight(),
-        home: MathExamplePage(),
+        home: MainMathPage(),
       ),
     );
   }
