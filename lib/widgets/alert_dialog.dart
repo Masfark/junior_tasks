@@ -21,7 +21,9 @@ class EndGameDialog extends StatelessWidget {
       actions: [
         MaterialButton(
           onPressed: () {
-            // ! Add navigate to main menu
+            // ! Add normal navigate to main menu
+            Navigator.of(context).pop();
+            Navigator.of(context).pop();
             Navigator.of(context).pop();
           },
           child: Text(
@@ -36,7 +38,9 @@ class EndGameDialog extends StatelessWidget {
           },
           child: Text(
             'Заново',
-            style: TextStyle(color: kPrimaryColor, fontSize: 16.0),
+            style: TextStyle(
+                color: Theme.of(context).textTheme.headline1.color,
+                fontSize: 16.0),
           ),
         ),
       ],

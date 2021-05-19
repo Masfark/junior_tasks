@@ -62,12 +62,12 @@ class _MinusMathPageState extends State<MinusMathPage> {
     });
     await Future.delayed(Duration(milliseconds: 800));
     if (i == 1) {
-      color = Theme.of(context).textTheme.headline6.color;
+      color = null;
       _generateExample(score);
       score += 10;
       check = false;
     } else if (i == 2) {
-      color = Theme.of(context).textTheme.headline6.color;
+      color = null;
       check = false;
       if (life <= 0) {
         showDialog(
@@ -102,7 +102,9 @@ class _MinusMathPageState extends State<MinusMathPage> {
               value1: value1,
               value2: value2,
               answer: answer,
-              color: color,
+              color: color != null
+                  ? color
+                  : Theme.of(context).textTheme.headline6.color,
               controller: _controller,
               answerCheck: _answerCheck,
               symbol: '-',

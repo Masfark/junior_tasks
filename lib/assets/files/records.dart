@@ -1,5 +1,5 @@
 class Records {
-  static Map<int, int> MathRecords = {
+  static Map<int, int> mathRecords = {
     1: 151350,
     2: 15135,
     3: 1513,

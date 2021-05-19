@@ -13,7 +13,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Map records = Records.MathRecords;
+  Map records = Records.mathRecords;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
