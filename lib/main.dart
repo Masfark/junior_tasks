@@ -2,6 +2,7 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:junior_tasks/assets/theme/theme.dart';
 import 'package:junior_tasks/pages/Math/main_math_page.dart';
+import 'package:junior_tasks/pages/home_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,9 +19,9 @@ class MyApp extends StatelessWidget {
       builder: (light, dark) => MaterialApp(
         themeMode: ThemeMode.system,
         darkTheme: dark,
-        title: 'Flutter Demo',
+        title: 'Детские задания',
         theme: myThemeLight(),
-        home: MainMathPage(),
+        home: MyHomePage(),
       ),
     );
   }

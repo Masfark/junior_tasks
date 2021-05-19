@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:junior_tasks/pages/Math/minus_math_page.dart';
 import 'package:junior_tasks/pages/Math/plus_math_page.dart';
-import 'package:junior_tasks/utils/constants.dart';
 import 'package:junior_tasks/widgets/text_headline.dart';
-import 'package:junior_tasks/widgets/text_main.dart';
 
 class MainMathPage extends StatefulWidget {
   @override
@@ -24,8 +23,10 @@ class _MainMathPageState extends State<MainMathPage>
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: HeadlineText('Math Page'),
+          title: HeadlineText('Математика'),
           bottom: TabBar(
+            indicatorWeight: 4.0,
+            unselectedLabelColor: Colors.white38,
             controller: _tabController,
             tabs: <Widget>[
               Tab(
@@ -34,11 +35,10 @@ class _MainMathPageState extends State<MainMathPage>
                   children: [
                     Icon(
                       Icons.exposure_plus_1,
-                      color: kWhite,
                     ),
-                    MainText(
+                    Text(
                       ' Сложение',
-                      color: kWhite,
+                      style: GoogleFonts.lobster(fontSize: 18.0),
                     ),
                   ],
                 ),
@@ -49,11 +49,10 @@ class _MainMathPageState extends State<MainMathPage>
                   children: [
                     Icon(
                       Icons.exposure_minus_1,
-                      color: kWhite,
                     ),
-                    MainText(
+                    Text(
                       ' Вычитание',
-                      color: kWhite,
+                      style: GoogleFonts.lobster(fontSize: 18.0),
                     ),
                   ],
                 ),

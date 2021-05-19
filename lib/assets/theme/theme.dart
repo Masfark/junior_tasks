@@ -11,6 +11,7 @@ ThemeData myThemeLight() => ThemeData(
       // * Text theme
       textTheme: TextTheme(
         headline1: GoogleFonts.lobster(fontSize: 18.0, color: kPrimaryColor),
+        headline2: GoogleFonts.lobster(fontSize: 20.0),
         headline6: GoogleFonts.lobster(fontSize: 48.0, color: kPrimaryColor),
         headline4: GoogleFonts.lobster(fontSize: 24.0, color: kWhite),
       ),
